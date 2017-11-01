@@ -1,0 +1,224 @@
+
+<idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='normalize.css' rel="stylesheet">
+	<script src="scrollByAnimated.js"></script>
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		body{ background:white;}
+		header {width:960px; height:44px; position: fixed;left:calc(50% - 480px);z-index: 9999;}
+		header #logo {float:left;  width:100px;height:44px;line-height: 44px;text-align: center;color:black;font-size: 0.8em;font-weight:400;}
+		header #menu {float:right; width:600px;}
+		header #menu li{float:left; width:100px; height: 44px;  line-height:44px;text-align: center;color:black;font-size: 0.8em;font-weight:400;cursor:pointer;}
+		header #menu li:hover{background: #FFCCDA}
+
+		 #myicon {float:center;background-size:100%; width:100px; height: 100px;position:absolute ;right:650px;top:100px;z-index: 9999;}
+		section,footer{width:960px; height:600px; margin:0 auto;position: relative}
+		section h2{color:white; font-size: 3em; font-weight:100; position: absolute;line-height: 1.2}
+		section p{color:white; font-size: 1em; font-weight:100; position: absolute;line-height: 1.5;width:550px;}
+		footer h2{color:white; font-size: 3em; line-height: 600px;}
+		svg {position: fixed;z-index: 9999}
+		section svg{position: absolute;}
+		#s1 {background:#191944}
+		#s1 h2{ left:600px; top:400px;}
+		
+		#s2{background:url('s2.png'); transition: all 1s;}
+		#s2 h2{left:200px; top:200px;}
+		#s2 p{left:200px; top:280px;}
+		#s2 svg{left:400px; top:330px;}
+		
+		#s3{background:#292832;transition: all 1s;}
+		#s3 h2{left:100px; top:300px;}
+		#s3 p{left:100px; top:380px;}
+		
+		#s4{background:url(01.png); width: 960px;height: 600px;}
+		#s4 h2{left:600px; top:200px;transition: all 3s; font-weight: 400}
+		
+		#s5{background:#FFD836;}
+		#s5 h2{left:180px; top:300px;}
+		#s5 p{left:200px; top:380px; font-weight: 500;}
+		
+		
+		footer{background:#292832;}
+		footer{text-align: center;}
+		#line{width:960px; position:absolute; left:calc(50% - 480px);z-index: 9999}
+		#line img{position: absolute; top:170px; left:30px; }
+#me_st{position:absolute ; right: 417px; top: 188px;transition: all 1s;}
+		#moon{transition: all 1s;}
+		#ht{transition:  all 1s;}
+		.foot{
+			width:100px; height:100px; 
+			background-repeat:no-repeat;
+			animation: bMove 8s linear;
+		}
+
+		@keyframes bMove{
+			0%{ background-position: 0 0px; opacity:0;}
+			20%{opacity:1;}
+			80%{ opacity:1; }
+			100%{ background-position:0 0;opacity:0;}
+		}
+	</style>
+</head>
+<body>
+	<div id="line"><img src="line.svg"></div>
+	<header>
+		<div id="logo">
+			Daily life
+		</div>
+		<div id="myicon"> <center><img src="mecr.png"></center> </div>
+		<ul id="menu">
+			<li id="m1">1</li>
+			<li id="m2">2</li>
+			<li id="m3">3</li>
+			<li id="m4">4</li>
+			<li id="m5">5</li>
+			<li id="m6">6</li>
+		</ul>
+	</header>
+	<section id="s1">
+		<h2>기상! </h2>
+	</section>
+	<section id="s2">
+		<h2>와다다다다다</h2>
+		<p></p>
+		<svg fill="#111111" height="200" viewBox="0 0 24 24" width="200" xmlns="http://www.w3.org/2000/svg">
+    		<path d="M0 0h24v24H0V0z" fill="none"/>
+    		<path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/ fill="#fff">
+		</svg>
+	</section>
+	<section id="s3">
+		<h2>수업중</h2>
+		<p></p>
+		<div id ="me_st"><center><img src="me_st.png"></center> </div>
+		
+
+	</section>
+	<section id="s4">
+		<h2>미술학원<br> 알바</h2>
+	</section>
+	<section id="s5">
+		<h2>취침</h2>
+		<p>하루끝★</p>
+		<div id ="moon"><center><img src="moon.png"></center> </div>
+		
+	</section>
+
+	<footer id="ht"><h2>♥</h2></footer>
+	
+	<script>
+		window.onload = function(){window.scrollTo(0,0);}
+		
+		m1.onclick = function(){ aniScroll(0); }
+		m2.onclick = function(){ aniScroll(600); }
+		m3.onclick = function(){ aniScroll(1200); }
+		m4.onclick = function(){ aniScroll(1800); }
+		m5.onclick = function(){ aniScroll(2900); }
+		m6.onclick = function(){ aniScroll(3690); }
+		function aniScroll(destination){
+			var distance = destination - document.body.scrollTop;
+			scrollByAnimated(distance, 250);
+		}
+
+
+		
+
+		window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var scrollH = document.body.scrollTop;
+
+		if(scrollH > 600){
+			s2.style.backgroundAttachment = "fixed";
+			
+
+		}else{
+			s2.style.backgroundAttachment = "fixed";
+			
+		}
+
+		if (scrollH > 1100) {
+			me_st.style.paddingTop = "90px";
+		}else{
+			me_st.style.paddingTop="500px";
+		}
+		if(scrollH >1360){
+			s4.style.backgroundAttachment = "fixed";
+			
+
+		}else{
+			s4.style.backgroundAttachment = "fixed";
+			
+		}
+		if(scrollH > 1900){
+			
+			s4.style.paddingTop = "500px";
+			s4.style.transform = "rotateX(0deg)";
+			
+
+			
+		}else{
+			s4.style.paddingTop = "280px";
+			s4.style.transform = "rotateX(180deg)";
+			
+
+	}
+
+	if(scrollH >2700){
+			moon.style.paddingTop = "0px";
+myicon.style.opacity = 0;
+
+		}
+	    else{
+	    	moon.style.paddingTop = "500px";
+	    	myicon.style.opacity = 100;
+			}
+			if(scrollH > 3300){
+			ht.style.paddingTop = "200px";
+			ht.style.color= "white";
+			ht.style.fontSize = "10em";
+	    	ht.style.background = "pink";
+
+		}
+	    else{
+	    	ht.style.paddingTop = "500px";
+	    
+	    	ht.style.color= "pink";
+	    	ht.style.fontSize = "3em";
+			ht.style.background = "white";
+	    }
+
+}
+
+
+
+		setInterval(attachFoot,1000);
+
+	function attachFoot(){
+		var t = document.createElement("div");
+		t.setAttribute("class","foot"); 
+		t.style.position ="absolute"
+	
+		t.style.background = "url('h_" + randomBH(1,4) + ".png') no-repeat";
+	
+		t.style.backgroundSize = "100% auto";
+		t.style.top = randomBH(0,600) + "px";
+		t.style.left = randomBH(0,window.innerWidth) + "px";
+		t.addEventListener("animationend",remove);
+		document.body.appendChild(t);		
+	}
+	
+	function remove(){
+		var t = event.target;
+		t.parentNode.removeChild(t); 
+	}
+
+	
+	function randomBH(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	</script>
+</body>
